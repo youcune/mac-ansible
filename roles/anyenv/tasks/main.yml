@@ -1,0 +1,18 @@
+---
+- git:
+    repo: https://github.com/riywo/anyenv.git
+    dest: ~/.anyenv
+- copy:
+    src: anyenv.sh
+    dest: ~/.profile_anyenv
+- lineinfile:
+    dest: ~/.bash_profile
+    line: . $HOME/.profile_anyenv
+    create: yes
+- lineinfile:
+    dest: ~/.zsh_profile
+    line: . $HOME/.profile_anyenv
+    create: yes
+- git:
+    repo: https://github.com/znz/anyenv-update.git
+    dest: ~/.anyenv/plugins/anyenv-update

@@ -1,0 +1,20 @@
+---
+- git:
+    repo: git@github.com:youcune/dotfiles.git
+    dest: ~/develop/dotfiles
+    accept_hostkey: yes
+- lineinfile:
+    dest: ~/.zshrc
+    line: . $HOME/develop/dotfiles/.zshrc
+    create: yes
+- file:
+    dest: ~/{{ item }}
+    src: ~/develop/dotfiles/{{ item }}
+    state: link
+  with_items:
+    - .vimrc
+    - .gitconfig
+    - .gitignore.global
+- shell: 'cp ~/develop/dotfiles/.gitconfig.local.example ~/.gitconfig.local'
+  args:
+    creates: ~/.gitconfig.local

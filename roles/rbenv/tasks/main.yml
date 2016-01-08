@@ -1,0 +1,5 @@
+---
+- shell: bash -lc 'anyenv update'
+- shell: bash -lc 'anyenv install rbenv'
+  args:
+    creates: ~/.anyenv/envs/rbenv
