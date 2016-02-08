@@ -52,7 +52,9 @@
       - rubymine
       - atom
       - coteditor
+      - transmit
       # Communicating
       - slack
+      - skype
     ruby_versions:
       - 2.3.0
