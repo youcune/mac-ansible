@@ -4,8 +4,6 @@
   roles:
     - role: homebrew
       tags: homebrew
-    - role: homebrew-cask
-      tags: homebrew-cask
     - role: ruby
       tags: ruby
     - role: dotfiles
@@ -28,33 +26,5 @@
     # install_options: string or sequence (default none)
     homebrew_packages:
       - readline
-    homebrew_cask_repositories:
-      - caskroom/versions
-    # Managed Homebrew Cask packages.
-    #
-    # e.g.
-    # - package_name
-    # or
-    # { name: package_name, state: package_state }
-    #
-    # state choices: [present, absent, installed, uninstalled] (default present)
-    homebrew_cask_packages:
-      # General
-      - google-japanese-ime
-      - karabiner
-      - 1password
-      - dropbox
-      - iterm2
-      - adobe-creative-cloud
-      # Browsing
-      - firefoxdeveloperedition
-      # Developing
-      - rubymine
-      - atom
-      - coteditor
-      - transmit
-      # Communicating
-      - slack
-      - skype
     ruby_versions:
       - 2.3.0
