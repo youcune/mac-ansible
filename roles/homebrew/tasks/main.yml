@@ -8,6 +8,13 @@
   when: result|failed
 - shell: ruby /tmp/brew_install
   when: result|failed
+- file:
+    dest: /tmp/brew_install
+    state: absent
+- homebrew_tap:
+    tap: '{{ item }}'
+  with_items: homebrew_repositories
+  when: homebrew_repositories
 - homebrew:
     name: "{{ item.name | default(item) }}"
     state: "{{ item.state | default('latest') }}"
