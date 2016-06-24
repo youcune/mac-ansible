@@ -29,5 +29,6 @@
       - openssl # to connect over https
       - imagemagick
       - apple-gcc42 # to build ruby 1.8.7-p371
+      - rmtrash
     ruby_versions:
       - 2.3.0
